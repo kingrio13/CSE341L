@@ -37,17 +37,17 @@ app.use(errorController.get404);
 
 const cors = require('cors') // Place this with other requires (like 'path' and 'express')
 
-// const corsOptions = {
-//     origin: "http://cse341l.herokuapp.com/",
-//     optionsSuccessStatus: 200
-// };
-// app.use(cors(corsOptions));
+const corsOptions = {
+    origin: "https://cse341l.herokuapp.com/",
+    optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 
-// const options = {
-//     useUnifiedTopology: true,
-//     useNewUrlParser: true,
-//     family: 4
-// };
+const options = {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+    family: 4
+};
 
 
 
@@ -72,7 +72,8 @@ mongoose
         user.save();
       }
     });
-    app.listen(3000);
+    app.listen(process.env.PORT || 5000);
+  
   })
   .catch(err => {
     console.log(err);
