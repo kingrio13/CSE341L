@@ -38,7 +38,7 @@ app.use(errorController.get404);
 const cors = require('cors') // Place this with other requires (like 'path' and 'express')
 
 const corsOptions = {
-    origin: "https://cse341l.herokuapp.com/",
+    origin: "http://cse341l.herokuapp.com/",
     optionsSuccessStatus: 200
 };
 app.use(cors(corsOptions));
